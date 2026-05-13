@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Eruri Kiriku - Private sports car broker. Enquiries by email or encrypted line." />
+  <title>Contact - Eruri Kiriku</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    :root {
+      --ink: #0b0a09;
+      --ink-2: #14110f;
+      --surface: #1c1815;
+      --line: #2a2421;
+      --paper: #f4ede1;
+      --paper-mute: #a89e8e;
+      --paper-dim: #6b6358;
+      --accent: #c8612d;
+      --accent-2: #e8b04a;
+      --f-display: "Fraunces", "Times New Roman", serif;
+      --f-body: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+      --f-mono: "JetBrains Mono", ui-monospace, monospace;
+      --pad: clamp(1.25rem, 4vw, 4rem);
+      --rad: 4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--f-body);
+      background: var(--ink);
+      color: var(--paper);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-2); }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem var(--pad);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--paper);
+      text-decoration: none;
+    }
+    .nav__mark {
+      font-family: var(--f-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .nav__name {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--paper-mute);
+    }
+    .nav__links { display: flex; gap: 1.5rem; }
+    .nav__links a {
+      font-size: 0.8rem;
+      color: var(--paper-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .nav__links a:hover { color: var(--paper); }
+
+    .contact-hero {
+      padding: 4rem var(--pad) 2rem;
+      text-align: center;
+    }
+    .contact-hero .eyebrow {
+      font-family: var(--f-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .contact-hero h1 {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin: 0 0 1rem;
+    }
+    .contact-hero h1 em { font-style: italic; color: var(--accent); }
+    .contact-hero p {
+      color: var(--paper-mute);
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      padding: 2rem var(--pad) 4rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    @media (max-width: 700px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .info h3 {
+      font-family: var(--f-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin: 0 0 1.5rem;
+    }
+    .info-item {
+      border-top: 1px solid var(--line);
+      padding: 1rem 0;
+    }
+    .info-item span {
+      display: block;
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--paper-dim);
+      margin-bottom: 0.3rem;
+    }
+    .info-item a, .info-item p {
+      font-size: 0.95rem;
+      margin: 0;
+      color: var(--paper);
+    }
+
+    .hours {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      background: var(--surface);
+      border-radius: var(--rad);
+      border: 1px solid var(--line);
+    }
+    .hours h4 {
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin: 0 0 0.75rem;
+    }
+    .hours p {
+      font-size: 0.85rem;
+      color: var(--paper-mute);
+      margin: 0.3rem 0;
+      line-height: 1.5;
+    }
+
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--rad);
+      padding: 2rem;
+    }
+    .form-card h3 {
+      font-family: var(--f-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin: 0 0 1.5rem;
+    }
+    .form-card label {
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+    .form-card label span {
+      display: block;
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--paper-dim);
+      margin-bottom: 0.4rem;
+    }
+    .form-card input,
+    .form-card select,
+    .form-card textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      font-family: var(--f-body);
+      font-size: 0.9rem;
+      background: var(--ink);
+      color: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--rad);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-card input:focus,
+    .form-card select:focus,
+    .form-card textarea:focus { border-color: var(--accent); }
+    .form-card select { cursor: pointer; }
+    .form-card textarea { resize: vertical; min-height: 100px; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      font-family: var(--f-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border: none;
+      border-radius: var(--rad);
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--accent);
+      color: var(--paper);
+      width: 100%;
+      text-align: center;
+    }
+    .btn:hover { background: var(--accent-2); color: var(--ink); }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--accent-2);
+      margin-top: 1rem;
+    }
+
+    .foot {
+      margin-top: auto;
+      border-top: 1px solid var(--line);
+      padding: 2rem var(--pad);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--paper-dim);
+    }
+    .foot__brand {
+      font-family: var(--f-display);
+      font-size: 1rem;
+      color: var(--paper);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <a href="index.html" class="nav__brand">
+      <span class="nav__mark">EK</span>
+      <span class="nav__name">Eruri Kiriku</span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html#inventory">Inventory</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-hero">
+    <span class="eyebrow">Get in Touch</span>
+    <h1>Let's find your <em>next car</em></h1>
+    <p>Whether you're sourcing a specific chassis or consigning a vehicle from your collection, we'd love to hear from you.</p>
+  </section>
+
+  <div class="contact-grid">
+    <div class="info">
+      <h3>Direct Contact</h3>
+      <div class="info-item">
+        <span>Email</span>
+        <a href="mailto:eruri@kiriku.auto">eruri@kiriku.auto</a>
+      </div>
+      <div class="info-item">
+        <span>Signal</span>
+        <p>+81 80 xxxx xxxx</p>
+      </div>
+      <div class="info-item">
+        <span>Telegram</span>
+        <a href="#">@erurikiriku</a>
+      </div>
+      <div class="info-item">
+        <span>Studios</span>
+        <p>Tokyo, Japan &middot; Monaco</p>
+      </div>
+
+      <div class="hours">
+        <h4>Response Times</h4>
+        <p>Most enquiries receive a reply within 24 hours.</p>
+        <p>Appointments are by arrangement only.</p>
+        <p>For urgent sourcing requests, use Signal or Telegram.</p>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>Send an Enquiry</h3>
+      <form onsubmit="event.preventDefault(); submitForm(this);">
+        <label>
+          <span>Your Name</span>
+          <input type="text" name="name" required placeholder="John Doe" />
+        </label>
+        <label>
+          <span>Email Address</span>
+          <input type="email" name="email" required placeholder="you@example.com" />
+        </label>
+        <label>
+          <span>Phone (optional)</span>
+          <input type="tel" name="phone" placeholder="+1 555 000 0000" />
+        </label>
+        <label>
+          <span>Looking For</span>
+          <input type="text" name="looking" placeholder="2024 Ferrari 296 GTS, Rosso Corsa" />
+        </label>
+        <label>
+          <span>Budget Range</span>
+          <select name="budget">
+            <option value="">Select range</option>
+            <option>Under $200k</option>
+            <option>$200k - $500k</option>
+            <option>$500k - $1M</option>
+            <option>$1M+</option>
+            <option>Open / Flexible</option>
+          </select>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="Tell us what you're looking for, or any questions you have."></textarea>
+        </label>
+        <button type="submit" class="btn">Send Enquiry</button>
+        <p class="form-note" id="formNote" hidden></p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span class="foot__brand">Eruri Kiriku</span>
+    <span>&copy; 2025 Eruri Kiriku. All rights reserved.</span>
+  </footer>
+
+  <script>
+    function submitForm(form) {
+      const note = document.getElementById('formNote');
+      note.textContent = 'Thank you! We will get back to you within 24 hours.';
+      note.hidden = false;
+      form.reset();
+      setTimeout(() => { note.hidden = true; }, 5000);
+    }
+  </script>
+</body>
+</html>
